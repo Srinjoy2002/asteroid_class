@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Asteroid Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Asteroid Prediction</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="minimum_orbit_intersection">Minimum Orbit Intersection:</label>
+                <input type="text" class="form-control" id="minimum_orbit_intersection" name="minimum_orbit_intersection" required>
+            </div>
+            <div class="form-group">
+                <label for="absolute_magnitude">Absolute Magnitude:</label>
+                <input type="text" class="form-control" id="absolute_magnitude" name="absolute_magnitude" required>
+            </div>
+            <div class="form-group">
+                <label for="est_dia_in_km_min">Est Dia in KM (min):</label>
+                <input type="text" class="form-control" id="est_dia_in_km_min" name="est_dia_in_km_min" required>
+            </div>
+            <div class="form-group">
+                <label for="asc_node_longitude">Asc Node Longitude:</label>
+                <input type="text" class="form-control" id="asc_node_longitude" name="asc_node_longitude" required>
+            </div>
+            <div class="form-group">
+                <label for="orbit_uncertainty">Orbit Uncertainty:</label>
+                <input type="text" class="form-control" id="orbit_uncertainty" name="orbit_uncertainty" required>
+            </div>
+            <div class="form-group">
+                <label for="perihelion_time">Perihelion Time:</label>
+                <input type="text" class="form-control" id="perihelion_time" name="perihelion_time" required>
+            </div>
+            <div class="form-group">
+                <label for="perihelion_arg">Perihelion Arg:</label>
+                <input type="text" class="form-control" id="perihelion_arg" name="perihelion_arg" required>
+            </div>
+            <div class="form-group">
+                <label for="jupiter_tisserand_invariant">Jupiter Tisserand Invariant:</label>
+                <input type="text" class="form-control" id="jupiter_tisserand_invariant" name="jupiter_tisserand_invariant" required>
+            </div>
+            <div class="form-group">
+                <label for="mean_motion">Mean Motion:</label>
+                <input type="text" class="form-control" id="mean_motion" name="mean_motion" required>
+            </div>
+            <div class="form-group">
+                <label for="eccentricity">Eccentricity:</label>
+                <input type="text" class="form-control" id="eccentricity" name="eccentricity" required>
+            </div>
+            <div class="form-group">
+                <label for="perihelion_distance">Perihelion Distance:</label>
+                <input type="text" class="form-control" id="perihelion_distance" name="perihelion_distance" required>
+            </div>
+            <div class="form-group">
+                <label for="orbital_period">Orbital Period:</label>
+                <input type="text" class="form-control" id="orbital_period" name="orbital_period" required>
+            </div>
+            <div class="form-group">
+                <label for="miss_dist_astronomical">Miss Dist. (Astronomical):</label>
+                <input type="text" class="form-control" id="miss_dist_astronomical" name="miss_dist_astronomical" required>
+            </div>
+            <div class="form-group">
+                <label for="inclination">Inclination:</label>
+                <input type="text" class="form-control" id="inclination" name="inclination" required>
+            </div>
+            <div class="form-group">
+                <label for="mean_anomaly">Mean Anomaly:</label>
+                <input type="text" class="form-control" id="mean_anomaly" name="mean_anomaly" required>
+            </div>
+            <div class="form-group">
+                <label for="aphelion_dist">Aphelion Dist:</label>
+                <input type="text" class="form-control" id="aphelion_dist" name="aphelion_dist" required>
+            </div>
+            <div class="form-group">
+                <label for="semi_major_axis">Semi Major Axis:</label>
+                <input type="text" class="form-control" id="semi_major_axis" name="semi_major_axis" required>
+            </div>
+            <div class="form-group">
+                <label for="epoch_osculation">Epoch Osculation:</label>
+                <input type="text" class="form-control" id="epoch_osculation" name="epoch_osculation" required>
+            </div>
+            <div class="form-group">
+                <label for="relative_velocity_km_per_sec">Relative Velocity km per sec:</label>
+                <input type="text" class="form-control" id="relative_velocity_km_per_sec" name="relative_velocity_km_per_sec" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if prediction is not none %}
+            <div class="mt-5">
+                <h3>Prediction:</h3>
+                <p>{{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
