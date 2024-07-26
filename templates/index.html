@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Asteroid Prediction</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
@@ -90,7 +91,7 @@
         {% if prediction is not none %}
             <div class="mt-5">
                 <h3>Prediction:</h3>
-                <p>{{ prediction }}</p>
+                <p>{{ message }}</p>
             </div>
         {% endif %}
     </div>

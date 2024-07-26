@@ -5,12 +5,13 @@ import numpy as np
 app = Flask(__name__)
 
 # Load your trained model
-with open('asteroid_model.pkl', 'rb') as file:
+with open('your_model.pkl', 'rb') as file:
     clf1 = pickle.load(file)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     prediction = None
+    message = ""
 
     if request.method == 'POST':
         # Get form data
@@ -41,7 +42,13 @@ def home():
         # Make prediction
         prediction = clf1.predict(data_array)[0]
 
-    return render_template('index.html', prediction=prediction)
+        # Custom message based on prediction
+        if prediction == 1:
+            message = "This is a near-Earth object and is potentially hazardous."
+        else:
+            message = "This is not a near-Earth object and is not potentially hazardous."
+
+    return render_template('index.html', prediction=prediction, message=message)
 
 if __name__ == '__main__':
     app.run(debug=True)
